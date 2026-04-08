@@ -1,0 +1,73 @@
+<svg width="1000" height="70" viewBox="0 0 1000 70" xmlns="http://www.w3.org/2000/svg">
+  <!-- Soft drop shadow for realistic metallic look -->
+  <filter id="shadow">
+    <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.35" />
+  </filter>
+
+  <defs>
+    <!-- Single double-wire loop component (Darker Steel aesthetic) -->
+    <g id="spiral">
+      <!-- Shadow of spiral wire cast on the paper behind it -->
+      <path d="M 12 25 Q 15 35 12 45" fill="none" stroke="rgba(0,0,0,0.25)" stroke-width="4" />
+      <path d="M 18 25 Q 21 35 18 45" fill="none" stroke="rgba(0,0,0,0.25)" stroke-width="4" />
+      
+      <!-- Inner hole punched in paper for wire -->
+      <rect x="8" y="32" width="8" height="12" rx="2" fill="#000000" opacity="0.3" />
+      <rect x="18" y="32" width="8" height="12" rx="2" fill="#000000" opacity="0.3" />
+      
+      <!-- Darker steel metal spiral wire front -->
+      <path d="M 9 34 C 9 10, 15 5, 15 15 C 15 25, 12 35, 12 45" fill="none" stroke="#94a3b8" stroke-width="3" stroke-linecap="round" filter="url(#shadow)" />
+      <!-- Subtle highlight -->
+      <path d="M 9.5 34 C 9.5 10, 15 7, 15 15 C 15 25, 12.5 35, 12.5 45" fill="none" stroke="#e2e8f0" stroke-width="0.8" stroke-linecap="round" opacity="0.8" />
+      
+      <path d="M 19 34 C 19 10, 25 5, 25 15 C 25 25, 22 35, 22 45" fill="none" stroke="#94a3b8" stroke-width="3" stroke-linecap="round" filter="url(#shadow)" />
+      <path d="M 19.5 34 C 19.5 10, 25 7, 25 15 C 25 25, 22.5 35, 22.5 45" fill="none" stroke="#e2e8f0" stroke-width="0.8" stroke-linecap="round" opacity="0.8" />
+    </g>
+  </defs>
+
+  <!-- Horizontal hanger wire (Darker Steel) -->
+  <path d="M 170 20 L 450 20 C 470 20, 480 5, 500 5 C 520 5, 530 20, 550 20 L 830 20" fill="none" stroke="#64748b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)" />
+  <!-- Horizontal hanger wire (Subtle Highlight) -->
+  <path d="M 170 19 L 450 19 C 470 19, 480 4, 500 4 C 520 4, 530 19, 550 19 L 830 19" fill="none" stroke="#cbd5e1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+
+  <!-- Thumb cutout for hanger to sit in against paper (adds depth effect) -->
+  <path d="M 470 30 Q 500 55 530 30" fill="rgba(0,0,0,0.15)" />
+
+  <!-- The nail/pin holding the hanger -->
+  <!-- Nail outer rim / shadow -->
+  <circle cx="500" cy="15" r="7.5" fill="#475569" filter="url(#shadow)" />
+  <!-- Nail face -->
+  <circle cx="500" cy="14" r="6" fill="#94a3b8" />
+  <!-- Nail inner shadow/hole -->
+  <circle cx="500" cy="14.5" r="2.5" fill="#1e293b" />
+
+  <!-- Repeat the spiral group -->
+  <g transform="translate(15, 0)">
+    <use href="#spiral" x="0" />
+    <use href="#spiral" x="35" />
+    <use href="#spiral" x="70" />
+    <use href="#spiral" x="105" />
+    <use href="#spiral" x="140" />
+    <use href="#spiral" x="175" />
+    <use href="#spiral" x="210" />
+    <use href="#spiral" x="245" />
+    <use href="#spiral" x="280" />
+    <use href="#spiral" x="315" />
+    <use href="#spiral" x="350" />
+    <use href="#spiral" x="385" />
+    <use href="#spiral" x="420" />
+    <!-- Skipping immediate center rings: 455, 490 -->
+    <use href="#spiral" x="525" />
+    <use href="#spiral" x="560" />
+    <use href="#spiral" x="595" />
+    <use href="#spiral" x="630" />
+    <use href="#spiral" x="665" />
+    <use href="#spiral" x="700" />
+    <use href="#spiral" x="735" />
+    <use href="#spiral" x="770" />
+    <use href="#spiral" x="805" />
+    <use href="#spiral" x="840" />
+    <use href="#spiral" x="875" />
+    <use href="#spiral" x="910" />
+  </g>
+</svg>
