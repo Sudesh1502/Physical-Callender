@@ -1,7 +1,6 @@
 import { startOfMonth, endOfMonth, startOfWeek, endOfWeek, eachDayOfInterval, isSameDay } from 'date-fns';
 
 export function getCalendarDays(month) {
-  // Calendar standard: Monday start
   const start = startOfWeek(startOfMonth(month), { weekStartsOn: 1 });
   const end = endOfWeek(endOfMonth(month), { weekStartsOn: 1 });
   
@@ -24,17 +23,31 @@ export function isDateSelected(date, selectionStart, selectionEnd) {
   return false;
 }
 
-const STORAGE_KEY = 'calendar_daily_notes';
+const TASKS_KEY = 'calendar_range_tasks';
+const TAGS_KEY = 'calendar_date_tags';
 
-export function getDateNotes() {
+export function getTasks() {
   try {
-    const data = localStorage.getItem(STORAGE_KEY);
+    const data = localStorage.getItem(TASKS_KEY);
+    return data ? JSON.parse(data) : [];
+  } catch (e) {
+    return [];
+  }
+}
+
+export function saveTasks(tasks) {
+  localStorage.setItem(TASKS_KEY, JSON.stringify(tasks));
+}
+
+export function getTags() {
+  try {
+    const data = localStorage.getItem(TAGS_KEY);
     return data ? JSON.parse(data) : {};
   } catch (e) {
     return {};
   }
 }
 
-export function saveDateNotes(notes) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(notes));
+export function saveTags(tags) {
+  localStorage.setItem(TAGS_KEY, JSON.stringify(tags));
 }

@@ -22,10 +22,12 @@ export default function NoteDialog({ isOpen, onClose, startDate, endDate, initia
       return;
     }
     onSave({
+        id: initialTask?.id || Date.now(),
       start: startDate,
       end: endDate,
       text: taskText,
       completed: isCompleted
+      
     });
   };
 
